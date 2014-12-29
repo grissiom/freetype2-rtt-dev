@@ -43,7 +43,6 @@ def _ft_get_src_path(fn):
             'ftlzw.c' : 'src/lzw/',
             'ftbz2.c' : 'src/bz2/',
             'ftsystem.c' : 'builds/rt-thread/',
-            'rtgui_driver.c' : 'builds/rt-thread/',
             'gb2312tounicode.c' : 'builds/rt-thread/',
             }
     # Always keep the path seperator in unix format.
@@ -113,7 +112,6 @@ def _ft_add_basic_system(fnli):
               'ftlcdfil.c',
               'ftmm.c',
               'ftpatent.c',
-              'rtgui_driver.c',
               'gb2312tounicode.c',
               'ftsystem.c',):
         if i not in fnli:
@@ -123,7 +121,7 @@ def _ft_add_basic_system(fnli):
 group = []
 
 # Test the depend before do any thing(copy config files etc).
-if not GetDepend(['RT_USING_RTGUI', 'RTGUI_USING_FREETYPE']):
+if not GetDepend(['RT_USING_RTGUI', 'RTGUI_USING_TTF']):
     Return('group')
 
 ###
